@@ -87,8 +87,8 @@ def convert_by_vocab(vocab, items):
   output = []
   for item in items:
     #TODO: modify for oov, using [unk] replace, if you using english language do not change this
-    # output.append(vocab.[item])
-    output.append(vocab.get(item, 100))
+    output.append(vocab[item])
+    # output.append(vocab.get(item, 100))
   return output
 
 
