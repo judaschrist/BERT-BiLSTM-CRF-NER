@@ -51,7 +51,7 @@ def send_ndarray(src, dest, X, req_id=b'', flags=0, copy=True, track=False):
     # md = dict(dtype=str(X.dtype), shape=X.shape)
     md = dict(dtype='str', shape=(len(X), len(X[0])))
     # print(md)
-    return src.send_multipart([dest, jsonapi.dumps(md), pickle.dumps(X), req_id], flags, copy=copy, track=track)
+    return src.send_multipart([dest, jsonapi.dumps(md), pickle.dumps(X, protocol=2), req_id], flags, copy=copy, track=track)
 
 
 def get_args_parser():
